@@ -1,3 +1,3 @@
 class CourseSerializer < ActiveModel::Serializer
-  attributes :id, :title, :desccription, :duration
+  attributes :id, :title, :description, :duration
 end
