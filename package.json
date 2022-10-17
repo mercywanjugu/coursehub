@@ -1,5 +1,5 @@
 {
-  "name": "phase-4-deploying-app-demo",
+  "name": "movieapp",
   "description": "Build scripts for Heroku",
   "engines": {
     "node": "16.x"
@@ -9,13 +9,5 @@
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.8.0",
-    "@mui/material": "^5.8.0",
-    "latest": "^0.2.0",
-    "styled-components": "^5.3.6"
   }
 }

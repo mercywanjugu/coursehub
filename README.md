@@ -51,7 +51,7 @@ I implemented at least 3 different client-side routing using the react router do
 I also added a bit of CSS Styling.
 
 ## Resources
-- Project Deploying Demo App - (https://github.com/learn-co-curriculum/phase-4-deploying-demo-app)
+- Project Deploying Demo App - 
 
 ## Running the App in Development
 
