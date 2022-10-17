@@ -5,18 +5,18 @@ import SignUpForm from "../components/SignUpForm";
 import { Button } from "../styles";
 
 function Login({ onLogin }) {
-  const [showLogin, setShowLogin] = useState(true);
+  const [show, setShow] = useState(true);
 
   return (
     <Wrapper>
-      <Logo>COURSEHUB</Logo>
-      {showLogin ? (
+      <Logo>Movie App</Logo>
+      {show ? (
         <>
           <LoginForm onLogin={onLogin} />
           <Divider />
           <p>
-            Need a course? &nbsp;
-            <Button color="secondary" onClick={() => setShowLogin(false)}>
+            Don't have an account? &nbsp;
+            <Button color="secondary" onClick={() => setShow(false)}>
               Sign Up
             </Button>
           </p>
@@ -27,7 +27,7 @@ function Login({ onLogin }) {
           <Divider />
           <p>
             Already have an account? &nbsp;
-            <Button color="secondary" onClick={() => setShowLogin(true)}>
+            <Button color="secondary" onClick={() => setShow(true)}>
               Log In
             </Button>
           </p>
@@ -56,4 +56,4 @@ const Divider = styled.hr`
   margin: 16px 0;
 `;
 
-export default Login;
+ export default Login;

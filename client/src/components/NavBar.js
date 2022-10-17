@@ -1,26 +1,33 @@
-import React from "react";
+//import {useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
-    fetch("/logout", { method: "DELETE" }).then((r) => {
+    fetch("/api/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
       }
     });
   }
-
   return (
     <Wrapper>
       <Logo>
-        <Link to="/">Coursehub</Link>
+        <Link to="/">Movie App</Link>
       </Logo>
       <Nav>
-        <Button as={Link} to="/new">
-          New Recipe
-        </Button>
+        <Welcome>
+      Signed in as: <a href="/profile">{user.username}</a>
+      </Welcome>
+      
+      <Button as={Link} to="/movies">
+        Movies
+        </Button> 
+        
+        {(user.role === "admin") ? (<Button as={Link} to="/movies/new">
+          New Movie
+        </Button>) : null }
         <Button variant="outline" onClick={handleLogoutClick}>
           Logout
         </Button>
@@ -28,6 +35,10 @@ function NavBar({ user, setUser }) {
     </Wrapper>
   );
 }
+
+const Welcome = styled.h5`
+	text-transform: uppercase;
+`
 
 const Wrapper = styled.header`
   display: flex;
@@ -42,6 +53,7 @@ const Logo = styled.h1`
   color: deeppink;
   margin: 0;
   line-height: 1;
+
   a {
     color: inherit;
     text-decoration: none;
